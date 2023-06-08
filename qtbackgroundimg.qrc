@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/countTimeSetting.ini</file>
+        <file>images/set.jpg</file>
+        <file>images/background.jpg</file>
+        <file>images/countTimeIcon.jpg</file>
+    </qresource>
+</RCC>
