@@ -8,6 +8,7 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
     this->setAttribute(Qt::WA_TranslucentBackground);
+    //this->setAttribute(Qt::WA_DeleteOnClose);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
     this->initUI();
     this->initSlots();
@@ -329,5 +330,19 @@ void Widget::initSysTray()
 
 Widget::~Widget()
 {
+    delete setDayTime;
+    delete begin;
+    delete time;
+    delete day;
+
+    delete menuBtn;
+
+    delete innerWidget;
+
+    delete setting;
+    delete setImg;
+    delete setDefaultImg;
+    delete setClose;
+
     delete sysTray;
 }

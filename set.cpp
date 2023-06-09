@@ -8,6 +8,7 @@ set::set(QWidget *parent): QWidget(parent)
 void set::initUI()
 {
     this->setWindowFlags(Qt::Tool);
+    this->setAttribute(Qt::WA_DeleteOnClose);
     //距离之后的节日
     setBeginText = new QLabel();
     setString = new QLineEdit();
@@ -111,6 +112,7 @@ void set::onConfigBtnClick()
     {
         m_cb(tranControl->value(),poweronAction->isChecked(),dateSelect->selectedDate(),setString->text(),m_context);
     }
+    delete m_context;
     this->close();
 }
 
@@ -127,5 +129,15 @@ void set::registerCallBack(onCallBack cb, void *context)
 
 set::~set()
 {
-
+    delete setBeginText;
+    delete setString;
+    //开机自启
+    delete poweronAction;
+    //透明度
+    delete tranControl;
+    delete tranValue;
+    //日期
+    delete dateSelect;
+    //确认按钮
+    delete configBtn;
 }
